@@ -70,7 +70,38 @@ editor.addEventListener('keydown', (event) => {
         runCode();
     }
 });
+// Bracket Auto Complete
+editor.addEventListener('keydown',(event)=>{
+    handleBracketAutoComplete(event);
+})
+ const pairs = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+    '"' : '"',
+    "'" : "'"
+ }
 
+function handleBracketAutoComplete(event){
+    const openChar = event.key;
+    const closeChar = pairs[openChar];
+
+    if(closeChar){
+        const start = editor.selectionStart; // Cursor start position
+        const end = editor.selectionEnd; // Cursor end position
+        const text = editor.value; // Current editor content
+        if (text[start] === closeChar) {
+            // Move the cursor forward instead of adding a new pair
+            event.preventDefault();
+            editor.setSelectionRange(start + 1, start + 1);
+        } else {
+            // Insert the pair normally
+            event.preventDefault(); // Prevent default behavior
+            editor.value = text.slice(0, start) + openChar + closeChar + text.slice(end);
+            editor.setSelectionRange(start + 1, start + 1); // Place the cursor between the pair
+        }
+    }
+}
 
 suggestFeature.addEventListener('click', suggestFeatures);
 saveBtn.addEventListener('click', saveFile);

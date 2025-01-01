@@ -173,6 +173,32 @@ body {
     font-family: monospace;
 }
 
+/* Footer */
+#ide-footer {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #3e3e4a;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #555;
+}
+
+#ide-footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+#ide-footer a {
+    color: #3093e0;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+#ide-footer a:hover {
+    color: #005bc4;
+}
 @media only screen and (max-width: 442px) {
     #ide-container {
         width: 95%;
@@ -205,5 +231,8 @@ body {
     }
     #output-console h2{
         font-size:0.9em;
+    }
+    #ide-footer {
+        font-size: 0.7em;
     }
 }
