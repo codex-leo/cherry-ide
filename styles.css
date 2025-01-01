@@ -50,7 +50,7 @@ body {
     margin-left: 10px;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3)
+    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
     transition: background-color 0.2s;
 }
 
@@ -101,7 +101,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3)
+    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
     transition: all 0.2s;
 }
 
@@ -201,8 +201,9 @@ body {
         font-size: 0.7em;
     }
     #file-system {
-        font-size:0.7em
+        font-size:0.7em;
     }
     #output-console h2{
-        font-size:0.9em
+        font-size:0.9em;
     }
+}
