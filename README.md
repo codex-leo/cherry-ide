@@ -9,3 +9,6 @@ A web based online IDE [for JavaScript(initially)] made using pure HTML,CSS,JS!.
 - **Optional Permanent Storage**: Save your code securely in your personal storage, keeping it between sessions.
 - **Sleek User Interface**: A modern and intuitive UI designed for a smooth coding experience.
 - **No Setup Required**: Just open your browser and start coding – no installation required.
+
+## View on GitHub pages
+- https://codex-leo.github.io/cherry-ide/
