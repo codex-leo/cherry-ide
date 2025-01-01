@@ -50,6 +50,7 @@ body {
     margin-left: 10px;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3)
     transition: background-color 0.2s;
 }
 
@@ -100,6 +101,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3)
     transition: all 0.2s;
 }
 
@@ -115,6 +117,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
     transition: all 0.2s;
 }
 
@@ -173,6 +176,10 @@ body {
 }
 
 @media only screen and (max-width: 442px) {
+    #ide-container {
+        width: 95%;
+        height: 95%;
+    }
     #ide-header {
         padding: 5px 5px;
     }
@@ -189,9 +196,11 @@ body {
     }
     #add-file-btn {
         padding: 4px 6px;
+        font-size: 0.9em;
     }
     #suggest-feature-btn{
         padding: 4px 6px;
+        font-size: 0.9em;
     }
     #file-system {
         font-size:0.7em
@@ -200,6 +209,3 @@ body {
         font-size:0.9em
     }
 }
-
-
-
