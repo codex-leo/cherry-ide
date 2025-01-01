@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets\favicon_io\favicon.ico" type="image/x-icon">
+    <title>Cherry IDE</title>
+</head>
+<body>
+    <div id="ide-container">
+        <!-- Header -->
+        <header id="ide-header">
+            <h1>&#10051; Cherry IDE</h1>
+            <div id="header-actions">
+                <button id="save-btn">Save</button>
+                <button id="clear-btn">Clear</button>
+                <button id="run-btn">Run &#10097;</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div id="ide-main">
+            <!-- File System Panel -->
+            <aside id="file-system">
+                <h2>Files</h2>
+                <ul id="file-list">
+                    <li>app.js</li>
+                </ul>
+                <button id="add-file-btn">Add File</button>
+                <br><br>
+                <button id="suggest-feature-btn">Suggest Features</button>
+            </aside>
+
+            <!-- Editor and Output Section -->
+            <section id="editor-output">
+                <!-- Code Editor -->
+                <div id="code-editor">
+                    <textarea id="editor" placeholder="Write your JavaScript code here... &#9998;"></textarea>
+                </div>
+                
+                <!-- Output Console -->
+                <div id="output-console">
+                    <h2>Console</h2>
+                    <div id="console-output"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#ide-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2e2e3a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+#ide-header {
+    background-color: #3e3e4a;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+}
+
+#ide-header h1 {
+    font-size: 1.5em;
+}
+
+#header-actions button {
+    background-color: #3093e0;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#header-actions button:hover {
+    background-color: #005bc4;
+}
+
+/* Main Content */
+#ide-main {
+    display: flex;
+    flex: 1;
+}
+
+/* File System Panel */
+#file-system {
+    width: 25%;
+    background-color: #3e3e4a;
+    padding: 15px;
+    border-right: 1px solid #555;
+}
+
+#file-system h2 {
+    margin-bottom: 10px;
+}
+
+#file-list {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+#file-list li {
+    padding: 8px;
+    background-color: #4e4e5a;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#file-list li:hover {
+    background-color: #5e5e6a;
+}
+
+#add-file-btn {
+    background-color: #3093e0;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+#add-file-btn:hover {
+    background-color: #005bc4;
+}
+
+#suggest-feature-btn {
+    background-color: #3093e0;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+#suggest-feature-btn:hover {
+    background-color: #005bc4;
+}
+
+/* Editor and Output Section */
+#editor-output {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#code-editor {
+    flex: 1;
+    background-color: #1e1e2e;
+    padding: 15px;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e3a;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    resize: none;
+    outline: none;
+}
+
+
+
+#output-console {
+    height: 30%;
+    background-color: #3e3e4a;
+    padding: 10px;
+    border-top: 1px solid #555;
+}
+
+#output-console h2 {
+    margin-bottom: 5px;
+}
+
+#console-output {
+    background-color: #2e2e3a;
+    color: #00ff00;
+    padding: 10px;
+    height: calc(100% - 25px);
+    overflow-y: auto;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 442px) {
+    #ide-header {
+        padding: 5px 5px;
+    }
+    #header-actions button {
+        padding: 4px 6px;
+        margin-left: 1px;
+    }
+    #ide-header h1 {
+        font-size: 1em;
+    }
+    #file-system {
+        width: 20%;    
+        padding: 4px;
+    }
+    #add-file-btn {
+        padding: 4px 6px;
+    }
+    #suggest-feature-btn{
+        padding: 4px 6px;
+    }
+    #file-system {
+        font-size:0.7em
+    }
+    #output-console h2{
+        font-size:0.9em
+    }
+}
+
+
+
