@@ -152,8 +152,6 @@ body {
     outline: none;
 }
 
-
-
 #output-console {
     height: 30%;
     background-color: #3e3e4a;
@@ -196,11 +194,11 @@ body {
     }
     #add-file-btn {
         padding: 4px 6px;
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
     #suggest-feature-btn{
         padding: 4px 6px;
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
     #file-system {
         font-size:0.7em
@@ -208,4 +206,3 @@ body {
     #output-console h2{
         font-size:0.9em
     }
-}
