@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="assets\favicon_io\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets\favicon.ico" type="image/x-icon">
     <title>Cherry IDE</title>
 </head>
 <body>
@@ -28,14 +28,44 @@
                     <li>app.js</li>
                 </ul>
                 <button id="add-file-btn">Add File</button>
+                <!-- Add new file -->
+                <div id="new-file">
+                    <h2>Add File</h2>
+                    <div id="new-file-card">
+                    <label for="fileName">File Name:</label>
+                   <input type="text" name="file-name" id="fileName">
+                   <button type="submit" id="add-btn">Add</button>
+                   </div>
+                </div>
                 <br><br>
                 <button id="suggest-feature-btn">Suggest Features</button>
+                <button id="settings-btn" >&#9881;</button>
+                <div id="settings-card">
+                    <div id="settings-header">
+                        <h1>Settings</h1>
+                        <button id="close-btn">&#10540; </button>
+                    </div>
+                    <label for="themes">Themes:</label>
+                    <select id="theme-dropdown">
+                        <optgroup
+                        label="Cherry-Originals">
+                        <optgroup label="Dark">
+                        <option value="dark">Dark-Original</option>
+                        <option value="midnightblsm">Midnight Blossom</option>
+                        </optgroup>
+                        <optgroup label="Light">
+                        <option value="light">Light-Original</option>
+                        <option value="blsm">Blossom</option>
+                        </optgroup>
+                        </optgroup>
+                    </select>
             </aside>
 
             <!-- Editor and Output Section -->
             <section id="editor-output">
                 <!-- Code Editor -->
                 <div id="code-editor">
+                    <div id="numberOfLines"></div>
                     <textarea id="editor" placeholder="Write your JavaScript code here... &#9998;"></textarea>
                 </div>
                 
@@ -48,7 +78,7 @@
         </div>
         <!-- Footer -->
         <footer id="ide-footer">
-            <p>&copy; 2025 Cherry IDE (Note: This is in still development)&#9996;.</p>
+            <p>&copy; 2025 Cherry IDE (Version: 0.2).</p>
             <a href="https://github.com/codex-leo" target="_blank">Github</a>
         </footer>
     </div>

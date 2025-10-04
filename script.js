@@ -3,10 +3,15 @@ const editor = document.getElementById('editor');
 const consoleOutput = document.getElementById('console-output');
 const saveBtn = document.getElementById('save-btn');
 const clearBtn = document.getElementById('clear-btn');
-const addFileBtn = document.getElementById('add-file-btn');
+const addFileBtn = document.getElementById('add-btn');
+const addFileOpen = document.getElementById('add-file-btn');
 const fileList = document.getElementById('file-list');
 const runBtn = document.getElementById('run-btn');
 const suggestFeature = document.getElementById('suggest-feature-btn');
+const settingsBtn = document.getElementById('settings-btn');
+const closeBtn = document.getElementById('close-btn');
+const lineNumber = document.getElementById('numberOfLines');
+const themeDropdown = document.getElementById('theme-dropdown');
 
 // Utility Functions
 function clearConsole() {
@@ -49,7 +54,9 @@ function saveFile() {
 }
 
 function addNewFile() {
-    const fileName = prompt('Enter the name of the new file:');
+    const fileNameInput = document.getElementById('fileName');
+    const fileName = fileNameInput.value.trim();
+
     if (fileName) {
         const newFile = document.createElement('li');
         newFile.textContent = fileName;
@@ -57,6 +64,8 @@ function addNewFile() {
             editor.value = ''; // Placeholder for actual file loading
         });
         fileList.appendChild(newFile);
+        fileNameInput.value = '';
+        Overlayscreen('new-file');
     }
 }
 
@@ -64,12 +73,42 @@ function suggestFeatures() {
     alert('Please suggest a feature by creating an issue on the GitHub repository.');
 }
 
+function Overlayscreen(elementId) {
+    let screen = document.getElementById(elementId);
+    if (screen.style.display === 'none' || screen.style.display === '') {
+        screen.style.display = 'block';
+    } else {
+        screen.style.display = 'none';
+    }
+}
+
+function updateLineNumbers() {
+    const lines = editor.value.split('\n').length;
+    lineNumber.innerHTML = Array.from({ length: lines}, (_, i) => i + 1).join('\n');
+};
+
+function applyTheme(){
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme){
+        document.body.setAttribute('data-theme',savedTheme);
+        themeDropdown.value = savedTheme;
+    }
+    themeDropdown.addEventListener('change',()=>{
+            const theme = themeDropdown.value;
+            document.body.setAttribute('data-theme',theme);
+            localStorage.setItem('theme',theme);
+        })
+    }
+
+applyTheme();
+
 // Event Listeners
 editor.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && event.ctrlKey) {
         runCode();
     }
 });
+
 // Bracket Auto Complete
 editor.addEventListener('keydown',(event)=>{
     handleBracketAutoComplete(event);
@@ -103,8 +142,33 @@ function handleBracketAutoComplete(event){
     }
 }
 
+closeBtn.addEventListener('click', () => {
+    const settingsCard = document.getElementById('settings-card');
+    if (settingsCard) {
+        settingsCard.style.display = 'none';
+    }
+});
+
+
+editor.addEventListener('input',updateLineNumbers);
+
+editor.addEventListener('scroll',()=>{
+    lineNumber.scrollTop = editor.scrollTop;
+})
+
+
+
 suggestFeature.addEventListener('click', suggestFeatures);
+
 saveBtn.addEventListener('click', saveFile);
+
 clearBtn.addEventListener('click', clearConsole);
+
 addFileBtn.addEventListener('click', addNewFile);
+
+addFileOpen.addEventListener('click',() => Overlayscreen('new-file'));
+
 runBtn.addEventListener('click', runCode);
+
+settingsBtn.addEventListener('click',() => Overlayscreen('settings-card'));
+

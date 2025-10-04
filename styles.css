@@ -1,3 +1,115 @@
+:root {
+    color-scheme: light dark;
+
+    --bg: light-dark(#e0e0ff,#1e1e2e);
+    --text: light-dark(#000000,#ffffff);
+    --container: light-dark(#babaff,#2e2e3a);
+    --header: light-dark(#9090ff,#3e3e4a);
+    --button: light-dark(#afafff,#3093e0);
+    --button-hover: light-dark(#6a6ae6,#005bc4);
+    --panel: light-dark(#9090ff,#3e3e4a);
+    --file: light-dark(#7878f9,#4e4e5a);
+    --file-hover: light-dark(#5a5abb,#5e5e6a);
+    --editor-bg: light-dark(#ebebfc,#2e2e3a);
+    --editor-text: light-dark(#2e2e3a,#ffffff);
+    --editor-wrapper: light-dark(#6a6ae6,#1e1e2e);
+    --console-bg: light-dark(#6a6ae6,#3e3e4a);
+    --console-output: light-dark(#5b5be1,#2e2e3a);
+    --settings-bg: light-dark(rgba(106, 106, 230, 0.5),rgba(255, 255, 255, 0.111));
+    --settings-select: light-dark(#5555ff,#5c5c61);
+    --special-btn: light-dark(#5959f4,#3093e0);
+}
+
+
+/* Dark theme */
+body[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #1e1e2e;
+    --text: #e1e1e1;
+    --container: #2e2e3a;
+    --header: #3e3e4a;
+    --button: #3093e0;
+    --button-hover: #005bc4;
+    --panel: #3e3e4a;
+    --file: #4e4e5a;
+    --file-hover: #5e5e6a;
+    --editor-bg: #2e2e3a;
+    --editor-text: #ffffff;
+    --editor-wrapper: #1e1e2e;
+    --console-bg: #3e3e4a;
+    --console-output: #2e2e3a;
+    --settings-bg: rgba(255, 255, 255, 0.111);
+    --settings-select: #5c5c61;
+    --special-btn: #3093e0;
+}
+
+/* Dark theme (Midnight Blossom) */
+body[data-theme="midnightblsm"] {
+    color-scheme: dark;
+    --bg: #28011c;
+    --text: #e1e1e1;
+    --container: #881f54;
+    --header: #8b4167;
+    --button: #731541;
+    --button-hover: #480c37;
+    --panel: #8b4167;
+    --file: #a14776;
+    --file-hover: #780840;
+    --editor-bg: #800442;
+    --editor-text: #e7e1ef;
+    --editor-wrapper: #6e1041;
+    --console-bg: #6e1041;
+    --console-output: #800442;
+    --settings-bg: rgba(117, 19, 78, 0.6);
+    --settings-select: #800442;
+    --special-btn: #9d0651;
+}
+
+/* Light theme */
+body[data-theme="light"] {
+    color-scheme: light;
+    --bg: #e0e0ff;
+    --text: #e7e1ef;
+    --container: #babaff;
+    --header: #9090ff;
+    --button: #afafff;
+    --button-hover: #6a6ae6;
+    --panel: #9090ff;
+    --file: #7878f9;
+    --file-hover: #5a5abb;
+    --editor-bg: #ebebfc;
+    --editor-text: #2e2e3a;
+    --editor-wrapper: #6a6ae6;
+    --console-bg: #6a6ae6;
+    --console-output: #5b5be1;
+    --settings-bg: rgba(106, 106, 230, 0.5);
+    --settings-select: #5555ff;
+    --special-btn: #5959f4;
+}
+
+/* Light theme (Blossom) */
+body[data-theme="blsm"] {
+    color-scheme: light;
+    --bg: #e39dce;
+    --text: #e7e1ef;
+    --container: #8e0449;
+    --header: #cb1a72;
+    --button: #e1569c;
+    --button-hover: #e84094;
+    --panel: #cf2d7e;
+    --file: #d25292;
+    --file-hover: #d968a1;
+    --editor-bg: #fac9e1;
+    --editor-text: #000000;
+    --editor-wrapper: #cc2a7b;
+    --console-bg: #cc2a7b;
+    --console-output: #800442;
+    --settings-bg: rgba(190, 56, 137, 0.6);
+    --settings-select: #a70054;
+    --special-btn: #d71f7b;
+}
+
+
 /* General Reset */
 * {
     margin: 0;
@@ -7,8 +119,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e2e;
-    color: #ffffff;
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,12 +129,12 @@ body {
 }
 
 #ide-container {
-    width: 90%;
+    background-color: var(--container);
+    width: 95%;
     max-width: 1200px;
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
-    background-color: #2e2e3a;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -30,7 +142,7 @@ body {
 
 /* Header */
 #ide-header {
-    background-color: #3e3e4a;
+    background-color: var(--header);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -43,19 +155,18 @@ body {
 }
 
 #header-actions button {
-    background-color: #3093e0;
+    background-color: var(--button);
     color: white;
     border: none;
     padding: 8px 12px;
     margin-left: 10px;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
     transition: background-color 0.2s;
 }
 
 #header-actions button:hover {
-    background-color: #005bc4;
+    background-color: var(--button-hover);
 }
 
 /* Main Content */
@@ -64,10 +175,23 @@ body {
     flex: 1;
 }
 
+#numberOfLines {
+    max-height: 365px;
+    position: relative;
+    width: 10px;
+    top: 2.6%;
+    padding-right: 20px;
+    text-align: right;
+    user-select: none;
+    font-size: 1em;
+    font-family: monospace;
+    overflow: hidden;
+}
+
 /* File System Panel */
 #file-system {
     width: 25%;
-    background-color: #3e3e4a;
+    background-color: var(--panel);
     padding: 15px;
     border-right: 1px solid #555;
 }
@@ -83,46 +207,33 @@ body {
 
 #file-list li {
     padding: 8px;
-    background-color: #4e4e5a;
+    background-color: var(--file);
     margin-bottom: 5px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 #file-list li:hover {
-    background-color: #5e5e6a;
+    background-color: var(--file-hover);
 }
 
-#add-file-btn {
-    background-color: #3093e0;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
-    transition: all 0.2s;
-}
-
-#add-file-btn:hover {
-    background-color: #005bc4;
-}
-
+#add-file-btn,
 #suggest-feature-btn {
-    background-color: #3093e0;
+    background-color: var(--button);
     color: white;
     border: none;
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(4, 45, 195, 0.3);
     transition: all 0.2s;
 }
 
-#suggest-feature-btn:hover {
-    background-color: #005bc4;
+#add-file-btn:hover,
+#suggest-feature-btn:hover,
+#settings-btn:hover,
+#close-btn:hover,#add-btn:hover {
+    background-color: var(--button-hover);
 }
 
 /* Editor and Output Section */
@@ -133,28 +244,33 @@ body {
 }
 
 #code-editor {
+    display: flex;
+    width: 100%;
     flex: 1;
-    background-color: #1e1e2e;
+    background-color: var(--editor-wrapper);
     padding: 15px;
+    overflow: hidden;
 }
 
 #editor {
+    flex-grow: 1;
     width: 100%;
     height: 100%;
-    background-color: #2e2e3a;
+    background-color: var(--editor-bg);
     border: none;
-    color: #ffffff;
+    color: var(--editor-text);
     font-size: 1em;
     padding: 10px;
     border-radius: 4px;
     font-family: monospace;
     resize: none;
     outline: none;
+    overflow: auto;
 }
 
 #output-console {
     height: 30%;
-    background-color: #3e3e4a;
+    background-color: var(--console-bg);
     padding: 10px;
     border-top: 1px solid #555;
 }
@@ -164,7 +280,7 @@ body {
 }
 
 #console-output {
-    background-color: #2e2e3a;
+    background-color: var(--console-output);
     color: #00ff00;
     padding: 10px;
     height: calc(100% - 25px);
@@ -173,10 +289,93 @@ body {
     font-family: monospace;
 }
 
+#settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#settings-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 80%;
+    display: none;
+    z-index: 1;
+    background: var(--settings-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#new-file {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    width: fit-content;
+    z-index: 1;
+    background: var(--settings-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(158, 158, 158, 0.644);
+    padding: 0.5em;
+    border-radius: 4px;
+    display: none;
+}
+
+#new-file-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#settings-card > select,
+#settings-card option {
+    background-color: var(--settings-select);
+    color: #ffffff;
+    padding: 10px 15px 10px 0;
+    font-size: 0.9em;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+#settings-btn {
+    position: relative;
+    top: 60%;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#close-btn,#add-btn {
+    background-color: var(--special-btn);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+::placeholder{
+    color: var(--editor-text);
+}
+
 /* Footer */
 #ide-footer {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #3e3e4a;
+    background-color: var(--container);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -187,23 +386,21 @@ body {
 #ide-footer p {
     margin: 0;
     font-size: 0.9em;
-    color: #cccccc;
+    color: var(--text);
 }
 
 #ide-footer a {
-    color: #3093e0;
+    color: var(--text);
     text-decoration: none;
     margin-left: 10px;
     transition: color 0.2s;
 }
 #ide-footer a:hover {
-    color: #005bc4;
+    color: var(--button-hover);
 }
+
+/* Responsive */
 @media only screen and (max-width: 442px) {
-    #ide-container {
-        width: 95%;
-        height: 95%;
-    }
     #ide-header {
         padding: 5px 5px;
     }
@@ -215,22 +412,24 @@ body {
         font-size: 1em;
     }
     #file-system {
-        width: 20%;    
+        width: 20%;
         padding: 4px;
     }
     #add-file-btn {
         padding: 4px 6px;
-        font-size: 0.7em;
     }
-    #suggest-feature-btn{
+    #suggest-feature-btn {
         padding: 4px 6px;
-        font-size: 0.7em;
     }
     #file-system {
-        font-size:0.7em;
+        font-size: 0.7em;
     }
-    #output-console h2{
-        font-size:0.9em;
+    #output-console h2 {
+        font-size: 0.9em;
+    }
+    #settings-btn{
+        top: 70%;
+        font-size: 1em;
     }
     #ide-footer {
         font-size: 0.7em;
